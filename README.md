@@ -1,6 +1,9 @@
 # tidbits
 Collection of small miscellaneous and/or interesting stuff that I might need again
 
+### RPyCenum.py
+Script to pull some info out of RPC services. Written ages ago to deal with an HTB box that closed connections very quickly, cant remember which.
+
 ### bof\_bad\_chars\_skeleton.py
 Mainly just offers a lazy way to generate string of all characters for bad char checking  
 Also has a short /bin/sh shellcode because it is handy
