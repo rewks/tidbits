@@ -1,6 +1,9 @@
 # tidbits
 Collection of small miscellaneous and/or interesting stuff that I might need again
 
+### MaliciousCopyPaste.html
+Small javascript PoC to hijack victims clipboard when they copy from site.
+
 ### RPyCenum.py
 Script to pull some info out of RPC services. Written ages ago to deal with an HTB box that closed connections very quickly, cant remember which.
 
