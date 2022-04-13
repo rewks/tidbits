@@ -11,7 +11,7 @@ Script to pull some info out of RPC services. Written ages ago to deal with an H
 Mainly just offers a lazy way to generate string of all characters for bad char checking  
 Also has a short /bin/sh shellcode because it is handy
 
-### getcrtsh\_domains.py
+### crtsh\_search.py
 Feed in a domain as an argument and it will search it on crt.sh, returning a list of all unique subdomains in the response
 
 ### instagrabber.py
