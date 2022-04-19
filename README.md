@@ -28,6 +28,11 @@ optional arguments:
   -o OUT, --out OUT     folder to save images
 ```
 
+### netscan.sh
+Usage: `./netscan.sh <IP>`
+
+Performs a full tcp scan to determine open ports, followed by detailed scan on those ports and (if passwordless sudo available) top 15 UDP ports. Saves outputs and compiles list of open services for the host as well as appending to a master file (intended for multi-threaded running against a range using `parallel`)
+
 ### rsg.sh
 Usage: `./rsg.sh <LHOST> <LPORT>`
   
