@@ -21,3 +21,4 @@ fi
 
 ## Add TCP services to master file
 grep '^[0-9]*/tcp' netscan_logs/${target}_tcp.nmap | sed s/^/${target}:/ | sed 's/\/tcp.*$//' >> netscan_services.list
+echo "[*] Finished scanning $target"
