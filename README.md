@@ -28,6 +28,11 @@ optional arguments:
   -o OUT, --out OUT     folder to save images
 ```
 
+### ipexpander.py
+Usage: `python3 ipexpander.py <ip range/file>`
+
+Will read in an ip range or a file containing one or more ip addresses/ranges and output a list of all unique ip addresses
+
 ### netscan.sh
 Usage: `./netscan.sh <IP>`
 
