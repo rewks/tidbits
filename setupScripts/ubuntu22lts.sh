@@ -11,11 +11,11 @@ sudo apt autoremove -y
 
 sudo systemctl stop cups.service
 sudo systemct disable cups.service
-sudo apt purge cups
+sudo apt purge cups -y
 sudo rm -rf /etc/cups
 sudo systemctl stop avahi-daemon
 sudo systemctl disable avahi-daemon
-sudo apt purge avahi-daemon
+sudo apt purge avahi-daemon -y
 sudo rm -rf /etc/avahi
 
 # Install generic packages
@@ -32,6 +32,8 @@ sudo systemctl stop ssh
 sudo apt install samba -y
 sudo systemctl disable smbd
 sudo systemctl stop smbd
+sudo systemctl disable nmbd
+sudo systemctl stop nmbd
 sudo apt install p7zip-full -y
 sudo apt install smbclient -y
 sudo apt install cewl -y
@@ -39,6 +41,7 @@ sudo apt install openconnect -y
 sudo apt install flameshot -y
 sudo apt install python3.10-venv -y
 sudo apt install autoconf -y
+sudo apt install parallel -y
 
 # Install languages and helper packages
 sudo apt install python3-pip -y
@@ -92,7 +95,7 @@ sudo apt install nmap -y
 sudo apt install arp-scan -y
 sudo apt install proxychains4 -y
 sudo apt install chromium-browser -y
-sudo apt install netcat-traditional
+sudo apt install netcat-traditional -y
 sudo rm /etc/alternatives/nc
 sudo ln -s /usr/bin/nc.traditional /etc/alternatives/nc
 
@@ -109,6 +112,7 @@ sudo pip3 install requests
 # Install security ruby gems/python modules
 sudo gem install evil-winrm
 sudo gem install wpscan
+sudo pip3 install ssh-audit
 sudo pip3 install service_identity
 sudo pip3 install mitm6
 sudo pip3 install impacket
@@ -260,5 +264,7 @@ echo "alias bloodhound='/opt/BloodHound-linux-x64/BloodHound --no-sandbox'" >> ~
 echo "alias covenant='sudo /opt/dotnet3.1/dotnet run --project ~/opt/Covenant/Covenant'" >> ~/.bashrc
 echo "alias ffuf='ffuf -c -ic -H \"User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:99.0) Gecko/20100101 Firefox/99.0\"'" >> ~/.bashrc
 echo "alias postman='/opt/postman/Postman'" >> ~/.bashrc
+
+sudo apt autoremove -y 
 
 source ~/.bashrc
