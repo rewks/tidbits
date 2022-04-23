@@ -7,14 +7,13 @@ bloodhound=https://github.com/BloodHoundAD/BloodHound/releases/download/4.1.0/Bl
 # Update repo lists and upgrade packages
 sudo apt update
 sudo apt upgrade -y
-sudo apt autoremove -y
 
 # Get rid of crap and stop rdp service being super persistent
 sudo systemctl stop cups.service
 sudo systemctl stop cups-browsed.service
 sudo systemctl stop cups.path
 sudo systemctl stop cups.socket
-sudo systemct disable cups.service
+sudo systemctl disable cups.service
 sudo systemctl disable cups-browsed.service
 sudo systemctl disable cups.path
 sudo systemctl disable cups.socket
