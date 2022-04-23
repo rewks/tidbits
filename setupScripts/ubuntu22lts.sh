@@ -9,14 +9,25 @@ sudo apt update
 sudo apt upgrade -y
 sudo apt autoremove -y
 
+# Get rid of crap and stop rdp service being super persistent
 sudo systemctl stop cups.service
+sudo systemctl stop cups-browsed.service
+sudo systemctl stop cups.path
+sudo systemctl stop cups.socket
 sudo systemct disable cups.service
+sudo systemctl disable cups-browsed.service
+sudo systemctl disable cups.path
+sudo systemctl disable cups.socket
 sudo apt purge cups -y
 sudo rm -rf /etc/cups
 sudo systemctl stop avahi-daemon
+sudo systemctl stop avahi-daemon.socket
 sudo systemctl disable avahi-daemon
+sudo systemctl disable avahi-daemon.socket
 sudo apt purge avahi-daemon -y
 sudo rm -rf /etc/avahi
+sudo unlink /etc/systemd/user/gnome-session.target.wants/gnome-remote-desktop.service
+systemctl stop --user gnome-remote-desktop
 
 # Install generic packages
 sudo apt install apt-transport-https -y
@@ -43,7 +54,11 @@ sudo apt install python3.10-venv -y
 sudo apt install autoconf -y
 sudo apt install parallel -y
 
-# Install languages and helper packages
+# Install libreoffice
+sudo apt install libreoffice-calc -y
+sudo apt install libreoffice-writer -y
+
+# Install languages and helper packages (pip, ruby, go, dotnet6)
 sudo apt install python3-pip -y
 sudo apt install ruby-dev -y
 sudo wget $golang -O /root/go.tar.gz
@@ -51,6 +66,11 @@ sudo tar -xf /root/go.tar.gz -C /root/
 sudo mv /root/go /usr/local/
 sudo ln -s /usr/local/go/bin/go /usr/local/bin/go
 sudo rm /root/go.tar.gz
+wget https://packages.microsoft.com/config/ubuntu/22.04/packages-microsoft-prod.deb -O /tmp/packages-microsoft-prod.deb
+sudo dpkg -i /tmp/packages-microsoft-prod.deb
+rm /tmp/packages-microsoft-prod.deb
+sudo apt update
+sudo apt install dotnet-sdk-6.0 -y
 
 # Docker
 sudo apt install ca-certificates curl gnupg lsb-release -y
