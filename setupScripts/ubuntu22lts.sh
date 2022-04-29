@@ -19,6 +19,7 @@ sudo systemctl disable cups.path
 sudo systemctl disable cups.socket
 sudo apt purge cups -y
 sudo rm -rf /etc/cups
+sudo rm -rf /var/log/cups
 sudo systemctl stop avahi-daemon
 sudo systemctl stop avahi-daemon.socket
 sudo systemctl disable avahi-daemon
@@ -52,6 +53,7 @@ sudo apt install flameshot -y
 sudo apt install python3.10-venv -y
 sudo apt install autoconf -y
 sudo apt install parallel -y
+sudo apt install cifs-utils -y
 
 # Install libreoffice
 sudo apt install libreoffice-calc -y
@@ -60,6 +62,7 @@ sudo apt install libreoffice-writer -y
 # Install languages and helper packages (pip, ruby, go, dotnet6)
 sudo apt install python3-pip -y
 sudo apt install ruby-dev -y
+sudo apt install php-cli -y
 sudo wget $golang -O /root/go.tar.gz
 sudo tar -xf /root/go.tar.gz -C /root/
 sudo mv /root/go /usr/local/
@@ -112,6 +115,9 @@ curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 # Install networking packages
 sudo apt install nmap -y
 sudo apt install arp-scan -y
+sudo apt install mysql-client -y
+sudo apt install wireshark -y
+sudo usermod -aG wireshark $(whoami)
 sudo apt install proxychains4 -y
 sudo apt install chromium-browser -y
 sudo apt install netcat-traditional -y
@@ -263,6 +269,8 @@ wget https://dl.pstmn.io/download/latest/linux64 -O postman.tar.gz
 tar -xzf postman.tar.gz 
 mv Postman/app /opt/postman
 rm -r Postman postman.tar.gz
+cd ~
+sudo apt install nikto -y
 
 
 cd ~
