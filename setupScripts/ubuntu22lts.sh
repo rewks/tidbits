@@ -54,6 +54,7 @@ sudo apt install python3.10-venv -y
 sudo apt install autoconf -y
 sudo apt install parallel -y
 sudo apt install cifs-utils -y
+sudo apt install whois -y
 
 # Install libreoffice
 sudo apt install libreoffice-calc -y
