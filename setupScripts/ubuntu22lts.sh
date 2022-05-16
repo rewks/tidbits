@@ -128,6 +128,7 @@ sudo ln -s /usr/bin/nc.traditional /etc/alternatives/nc
 # Install generic ruby gems/python modules
 sudo gem install winrm
 sudo gem install winrm-fs
+sudo gem install rex-text
 sudo pip3 install ldap3
 sudo pip3 install termcolor 
 sudo pip3 install cprint 
