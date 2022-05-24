@@ -1,5 +1,8 @@
 #!/bin/bash
 
+ghidra=https://github.com/NationalSecurityAgency/ghidra/releases/download/Ghidra_10.1.3_build/ghidra_10.1.3_PUBLIC_20220421.zip
+jdk=https://download.oracle.com/java/18/latest/jdk-18_linux-x64_bin.deb
+
 sudo pip3 install pwntools
 sudo pip3 install capstone
 sudo pip3 install filebytes
@@ -23,14 +26,14 @@ cd radare2
 sys/install.sh
 cd ..
 
-wget https://github.com/NationalSecurityAgency/ghidra/releases/download/Ghidra_10.1.3_build/ghidra_10.1.3_PUBLIC_20220421.zip -O ghidra.zip
+wget $ghidra -O ghidra.zip
 unzip ghidra.zip
 rm ghidra.zip
-echo "alias ghidra='/opt/ghidra_10.1.3_PUBLIC/ghidraRun'" >> ~/.bashrc
+echo "alias ghidra='/opt/$(ls -1 | grep ghidra)/ghidraRun'" >> ~/.bashrc
 
-wget https://download.oracle.com/java/18/latest/jdk-18_linux-x64_bin.deb
+wget $jdk
 sudo apt install libc6-i386 libc6-x32
-sudo dpkg -i jdk-18_linux-x64_bin.deb
-rm jdk-18_linux-x64_bin.deb
+sudo dpkg -i $(ls -1 | grep jdk*.deb)
+rm $(ls -1 | grep jdk*.deb)
 cd ~
 source .bashrc

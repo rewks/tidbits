@@ -8,7 +8,7 @@ bloodhound=https://github.com/BloodHoundAD/BloodHound/releases/download/4.1.0/Bl
 sudo apt update
 sudo apt upgrade -y
 
-# Get rid of crap and stop rdp service being super persistent
+# Get rid of crap 
 sudo systemctl stop cups.service
 sudo systemctl stop cups-browsed.service
 sudo systemctl stop cups.path
@@ -26,6 +26,8 @@ sudo systemctl disable avahi-daemon
 sudo systemctl disable avahi-daemon.socket
 sudo apt purge avahi-daemon -y
 sudo rm -rf /etc/avahi
+
+# stop rdp service being super persistent
 sudo unlink /etc/systemd/user/gnome-session.target.wants/gnome-remote-desktop.service
 systemctl stop --user gnome-remote-desktop
 
