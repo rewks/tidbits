@@ -57,6 +57,7 @@ sudo apt install autoconf -y
 sudo apt install parallel -y
 sudo apt install cifs-utils -y
 sudo apt install whois -y
+sudo apt install libimage-exiftool-perl -y
 
 # Install libreoffice
 sudo apt install libreoffice-calc -y
@@ -281,7 +282,7 @@ cd ~
 
 # ========= ALIASES / PATH =========
 # Add executable locations to path
-echo "export PATH=\$PATH:~/go/bin" >> ~/.bashrc
+echo "export PATH=\$PATH:~/go/bin:/opt/john/run" >> ~/.bashrc
 
 # Add aliases
 echo "alias vi='vim'" >> ~/.bashrc
