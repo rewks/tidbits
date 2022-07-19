@@ -6,17 +6,13 @@ import re
 import argparse
 from os import path
 
-headers = {
-        'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:97.0) Gecko/20100101 Firefox/97.0',
-        'X-Ig-App-Id': '936619743392459',
-        'X-Asbd-Id': '198387',
-        'Origin': 'https://www.instagram.com',
-        'Referer': 'https://www.instagram.com/'
-        }
-
 def getUserId(userId, sess):
-    url = f'https://www.instagram.com/{userId}/'   
-    r = sess.get(url, headers=headers)
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101 Firefox/102.0',
+    }
+    url = f'https://www.instagram.com/{userId}/'  
+    print(f'[-] Attempting to grab user ID from {url}')
+    r = sess.get(url)
 
     pattern = r'profilePage_(\d{1,12})'
     compPat = re.compile(pattern)
@@ -35,6 +31,14 @@ def buildImgList(profileId, sess):
     anotherPage = True
     afterId = ''
     imgURLs = []
+
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101 Firefox/102.0',
+        'X-Ig-App-Id': '936619743392459',
+        'X-Asbd-Id': '198387',
+        'Origin': 'https://www.instagram.com',
+        'Referer': 'https://www.instagram.com/'
+    }
 
     # gather urls to all images
     while anotherPage:
