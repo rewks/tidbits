@@ -58,6 +58,7 @@ sudo apt install parallel -y
 sudo apt install cifs-utils -y
 sudo apt install whois -y
 sudo apt install libimage-exiftool-perl -y
+sudo apt install openjdk-18-jdk -y
 
 # Install libreoffice
 sudo apt install libreoffice-calc -y
